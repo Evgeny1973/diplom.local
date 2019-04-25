@@ -1,0 +1,13 @@
+{# /index/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for good in goods %}
+        <p>{{ good.category.name }}</p>
+        <p>{{ good.name }}</p>
+        <p>{{ good.description }}</p>
+        <p>{{ good.price }}</p>
+        <img src="/images/{{ good.img }}">
+    {% endfor %}
+
+{% endblock %}
