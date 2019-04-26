@@ -2,6 +2,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+    <!-- Home -->
+    <div class="home home-notmain">
+        <div class="home_container">
+            <div class="home_background" style="background-image:url('/images/{{ category.image }}')"></div>
+            <div class="home_content_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">{{ category.name }}<span>.</span></div>
+                                <div class="home_text"><p>Отличные гаджеты для вас и вашей семьи!</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!-- Products -->
 
 <div class="products">

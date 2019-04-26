@@ -18,6 +18,11 @@ class CategoriesController extends AbstractController
         $goods = $this->getDoctrine()->getRepository(Good::class)
             ->findBy(['category' => $id]);
         $categories = $this->getDoctrine()->getRepository(Categories::class)->findAll();
-        return $this->render('categories/category.html.twig', ['goods' => $goods, 'categories' => $categories]);
+        $category = $this->getDoctrine()->getRepository(Categories::class)->find($id);
+        if (!$goods){
+            return $this->redirectToRoute('index');
+        }
+
+        return $this->render('categories/category.html.twig', ['goods' => $goods, 'categories' => $categories, 'category' => $category]);
     }
 }

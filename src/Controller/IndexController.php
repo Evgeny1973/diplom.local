@@ -12,7 +12,7 @@ class IndexController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function  index()
+    public function index()
     {
         $goods = $this->getDoctrine()->getRepository(Good::class)
             ->findLatest();

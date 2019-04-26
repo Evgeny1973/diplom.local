@@ -7,13 +7,14 @@
 
       <div class="product_details">
          <div class="container">
-            <div class="row details_row">
+            <div class="row details_row" style="margin-top: 150px">
 
                <!-- Product Image -->
 
                <div class="col-lg-6">
-                  {% for image in good.images %}
+
                   <div class="details_image">
+                     {% for image in good.images %}
                      <div class="details_image_large"><img src="/images/{{ image }}" alt="{{ image }}">
 
                      </div>
@@ -21,17 +22,20 @@
                            <div class="details_image_thumbnail active" data-image="/images/{{ image }}">
                               <img src="/images/{{ image }}" alt="{{ image }}"></div>
                      </div>
+                         <img src="/images/{{ image }}" alt="{{ image }}">
+
+                     {% endfor %}
                   </div>
-                  {% endfor %}
+
                </div>
 
 
                <!-- Product Content -->
                <div class="col-lg-6">
                   <div class="details_content">
-                    {# <div class="details_name">{{ categories }}</div>#}
+                    <div class="details_name">{{ good.name }}</div>
                      {#<div class="details_discount">{{ good.price }}</div>#}
-                     <div class="details_price">{{ good.price }}</div>
+                     <div class="details_price">Цена <b>{{ good.price }} </b>рублей</div>
 
                      <!-- In Stock -->
                      <div class="in_stock_container">

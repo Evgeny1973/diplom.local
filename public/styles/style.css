@@ -752,7 +752,7 @@ section {
 
 .home_slider_background {
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -999,8 +999,14 @@ section {
 }
 
 .product_image img {
-    max-width: 100%;
+    width: 300px;
+    height: 300px;
 }
+
+
+/*.product_image img {
+    max-width: 100%;
+}*/
 
 .product_content {
     width: 100%;
