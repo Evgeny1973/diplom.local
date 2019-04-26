@@ -19,6 +19,16 @@ class GoodRepository extends ServiceEntityRepository
         parent::__construct($registry, Good::class);
     }
 
+    public function findLatest()
+    {
+        return $this
+            ->createQueryBuilder('g')
+            ->orderBy('g.id', 'DESC')
+            ->setMaxResults(8)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Good[] Returns an array of Good objects
     //  */

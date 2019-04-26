@@ -43,6 +43,16 @@ class Good
     private $img;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $discount;
+
+    /**
      * @ORM\Column(type="json", nullable=true)
      */
     private $images;
@@ -80,5 +90,15 @@ class Good
      public function getImages()
     {
         return $this->images;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function getDiscount()
+    {
+        return $this->discount;
     }
 }

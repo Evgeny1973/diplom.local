@@ -7,16 +7,17 @@ use App\Entity\Good;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IndexController extends AbstractController
+class CategoriesController extends AbstractController
 {
+
     /**
-     * @Route("/", name="index")
+     * @Route("/category/{id}", name="category_id", requirements={"id"="\d+"})
      */
-    public function  index()
+    public function category($id)
     {
         $goods = $this->getDoctrine()->getRepository(Good::class)
-            ->findLatest();
+            ->findBy(['category' => $id]);
         $categories = $this->getDoctrine()->getRepository(Categories::class)->findAll();
-        return $this->render('index/index.html.twig', ['goods' => $goods, 'categories' => $categories]);
+        return $this->render('categories/category.html.twig', ['goods' => $goods, 'categories' => $categories]);
     }
 }

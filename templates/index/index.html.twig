@@ -18,7 +18,7 @@
                                 <div class="col">
                                     <div class="home_slider_content" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                         <div class="home_slider_title">Насладитесь новым он-лайн магазином.</div>
-                                        <div class="home_slider_subtitle">Тут напишем, какой у нас крутой лабаз!
+                                        <div class="home_slider_subtitle">В нашем интернет-магазине вы купите смартфон, планшет и другую электронику намного дешевле, чем в торговых сетях и розничных магазинах. Секрет низкой цены — у нас нет затрат на аренду торговых мест, зарплату персонала торговой точки и прочее.
                                         </div>
                                         <div class="button button_light home_button"><a href="{{ path('index') }}">Начать покупки</a></div>
                                     </div>
@@ -37,30 +37,9 @@
                                 <div class="col">
                                     <div class="home_slider_content" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                         <div class="home_slider_title">Насладитесь новым он-лайн магазином.</div>
-                                        <div class="home_slider_subtitle">Тут напишем, какой у нас крутой лабаз!
+                                        <div class="home_slider_subtitle">В нашем интернет-магазине вы купите смартфон, планшет и другую электронику намного дешевле, чем в торговых сетях и розничных магазинах. Секрет низкой цены — у нас нет затрат на аренду торговых мест, зарплату персонала торговой точки и прочее.
                                         </div>
-                                        <div class="button button_light home_button"><a href="{{ path('index') }}">Начать покупки</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url({{ asset('/images/home_slider_1.jpg') }})"></div>
-                    <div class="home_slider_content_container">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="home_slider_content" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                        <div class="home_slider_title">Насладитесь новым он-лайн магазином.</div>
-                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed
-                                            viverra velit venenatis fermentum luctus.
-                                        </div>
-                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                        <div class="button button_light home_button"><a href="#">Начать покупки</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -70,6 +49,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Ads -->
+    {% for good in goods %}
+        {% if good.discount != null %}
+    <div class="avds">
+        <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
+            <div class="avds_small">
+                <div class="avds_background" style="background-image:url(/images/{{ good.img }})"></div>
+                <div class="avds_small_inner">
+                    <div class="avds_discount_container">
+                        <img src="{{ asset('images/discount.png') }}" alt="">
+                        <div>
+                            <div class="avds_discount">
+                                <div>{{ good.discount }}<span>%</span></div>
+                                <div>Скидка!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avds_small_content">
+                        <div class="avds_title">{{ good.category.name }}</div>
+                        <div class="avds_link"><a href="{{ path('category_id', {id: good.category.id}) }}">Перейти</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <div class="avds_large">
+                <div class="avds_background" style="background-image:url({{ asset('images/adv_large_watches.jpg') }})"></div>
+                <div class="avds_large_container">
+                    <div class="avds_large_content">
+                        <div class="avds_title">Умные часы</div>
+                        <div class="avds_text">Чуть ли не супер компьютер на руке, способный решить любые задачи. Насколько можно верить рекламе известно каждому :) Давайте разбираться, что на самом деле умеют продвинутые гаджеты. Есть ли реальная польза или только «понты»? Разобраться не просто. Новинки появляются регулярно, и характеристики неоднозначны.</div>
+                        <div class="avds_link avds_link_large"><a href="{{ path('category_id', {id: 3}) }}">Перейти</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Products -->
     <div class="products">
@@ -81,9 +100,11 @@
                             <!-- Product -->
                             <div class="product">
                                 <div class="product_image"><img src="/images/{{ good.img }}" alt="{{ good.name }}"></div>
-                                <div class="product_extra product_new"><a href="categories.html">{{ good.category.name }}</a></div>
+                                {% if good.status %}
+                                <div class="product_extra product_new">{{ good.status }}</div>
+                                {% endif %}
                                 <div class="product_content">
-                                    <div class="product_title"><a href="product.html">{{ good.name }}</a></div>
+                                    <div class="product_title"><a href="{{ path('product_id', {id: good.id}) }}">{{ good.name }}</a></div>
                                     <div class="product_price">{{ good.price }} руб.</div>
                                 </div>
                             </div>
