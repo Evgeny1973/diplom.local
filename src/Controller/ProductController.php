@@ -19,7 +19,7 @@ class ProductController extends AbstractController
         if (!$good) {
             return $this->redirectToRoute('index');
         }
-        $categories = $this->getDoctrine()->getRepository(Categories::class)->find($id);
-        return $this->render('product/index.html.twig', ['good' => $good, 'categories' => $categories]);
+
+        return $this->render('product/index.html.twig', ['good' => $good]);
     }
 }

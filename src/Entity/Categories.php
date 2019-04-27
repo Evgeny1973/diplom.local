@@ -28,6 +28,10 @@ class Categories
      */
     private $rus_name;
 
+ /**
+     * @ORM\Column(type="string", length=500)
+     */
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -49,22 +53,13 @@ class Categories
         return $this->name;
     }
 
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
     public function getRusName(): ?string
     {
         return $this->rus_name;
     }
 
-    public function setRusName(string $rus_name): self
+    public function getDescription()
     {
-        $this->rus_name = $rus_name;
-
-        return $this;
+        return $this->description;
     }
 }
