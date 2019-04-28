@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoriesController extends AbstractController
 {
 
-    /**
+      /**
      * @Route("/category/{id}", name="category_id", requirements={"id"="\d+"})
      */
     public function category($id)

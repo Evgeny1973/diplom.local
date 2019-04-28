@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Good;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\AbstractQuery;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -36,7 +37,7 @@ class GoodRepository extends ServiceEntityRepository
             ->select('c.id', 'c.name', 'c.price', 'c.img')
             ->where("c.id = $id")
             ->getQuery()
-            ->getResult();
+            ->getResult(AbstractQuery::HYDRATE_OBJECT);
     }
 
     // /**
