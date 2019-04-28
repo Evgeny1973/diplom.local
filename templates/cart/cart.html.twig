@@ -1,15 +1,25 @@
+{# cart/index.html.twig#}
+{% extends 'base.html.twig' %}
+{% block body %}
 <!-- Cart Info -->
+{#    {% for good in  app.session.get('good')%}
+    {{ good.price }}
+    {% endfor %}#}
 
+{{ dump(app.session.get('totalQuantity')) }}
+
+
+    {#
 <div class="cart_info">
     <div class="container">
         <div class="row">
             <div class="col">
                 <!-- Column Titles -->
                 <div class="cart_info_columns clearfix">
-                    <div class="cart_info_col cart_info_col_product">Product</div>
-                    <div class="cart_info_col cart_info_col_price">Price</div>
-                    <div class="cart_info_col cart_info_col_quantity">Quantity</div>
-                    <div class="cart_info_col cart_info_col_total">Total</div>
+                    <div class="cart_info_col cart_info_col_product">Название</div>
+                    <div class="cart_info_col cart_info_col_price">Цена</div>
+                    <div class="cart_info_col cart_info_col_quantity">Количество</div>
+                    <div class="cart_info_col cart_info_col_total">Стоимость</div>
                 </div>
             </div>
         </div>
@@ -21,20 +31,20 @@
                     <!-- Name -->
                     <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
                         <div class="cart_item_image">
-                            <div><img src="images/cart_1.jpg" alt=""></div>
+                            <div><img src="/images/{{ good.img }}" alt="{{ good.name }}"></div>
                         </div>
                         <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="#">Smart Phone Deluxe Edition</a></div>
-                            <div class="cart_item_edit"><a href="#">Edit Product</a></div>
+                            <div class="cart_item_name"><a href="#">{{ good.name }}</a></div>
+                           #}{# <div class="cart_item_edit"><a href="#">Edit Product</a></div>#}{#
                         </div>
                     </div>
                     <!-- Price -->
-                    <div class="cart_item_price">$790.90</div>
+                    <div class="cart_item_price">{{ good.price }}</div>
                     <!-- Quantity -->
                     <div class="cart_item_quantity">
                         <div class="product_quantity_container">
                             <div class="product_quantity clearfix">
-                                <span>Qty</span>
+                                <span>Кол-во</span>
                                 <input class="quantity_input" type="text" pattern="[0-9]*" value="1">
                                 <div class="quantity_buttons">
                                     <div class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
@@ -44,52 +54,18 @@
                         </div>
                     </div>
                     <!-- Total -->
-                    <div class="cart_item_total">$790.90</div>
+                    <div class="cart_item_total">{{ good.price }} </div>
                 </div>
-
             </div>
 
-            <div class="col-12">
 
-                <!-- Cart Item -->
-                <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-                    <!-- Name -->
-                    <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-                        <div class="cart_item_image">
-                            <div><img src="images/cart_1.jpg" alt=""></div>
-                        </div>
-                        <div class="cart_item_name_container">
-                            <div class="cart_item_name"><a href="#">Smart Phone Deluxe Edition</a></div>
-                            <div class="cart_item_edit"><a href="#">Edit Product</a></div>
-                        </div>
-                    </div>
-                    <!-- Price -->
-                    <div class="cart_item_price">$790.90</div>
-                    <!-- Quantity -->
-                    <div class="cart_item_quantity">
-                        <div class="product_quantity_container">
-                            <div class="product_quantity clearfix">
-                                <span>Qty</span>
-                                <input class="quantity_input" type="text" pattern="[0-9]*" value="1">
-                                <div class="quantity_buttons">
-                                    <div class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                    <div class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Total -->
-                    <div class="cart_item_total">$790.90</div>
-                </div>
-
-            </div>
         </div>
         <div class="row row_cart_buttons">
             <div class="col">
                 <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                    <div class="button continue_shopping_button newsletter_button"><a href="#">Continue shopping</a></div>
+                    <div class="button continue_shopping_button newsletter_button"><a href="#">Продолжить покупки</a></div>
                     <div class="cart_buttons_right ml-lg-auto">
-                        <div class="button clear_cart_button newsletter_button"><a href="#">Clear cart</a></div>
+                        <div class="button clear_cart_button newsletter_button"><a href="#">Очистить корзину</a></div>
                     </div>
                 </div>
             </div>
@@ -99,7 +75,7 @@
 
                 <!-- Delivery -->
                 <div class="delivery">
-                    <div class="section_title">Shipping method</div>
+                    <div class="section_title">Доставка</div>
                     <div class="section_subtitle">Select the one you want</div>
                     <div class="delivery_options">
                         <label class="delivery_option clearfix">Next day delivery
@@ -158,4 +134,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>#}
+{% endblock %}

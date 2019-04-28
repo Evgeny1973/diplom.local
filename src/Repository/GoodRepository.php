@@ -29,6 +29,16 @@ class GoodRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function getGoodForCart($id)
+    {
+        return $this
+            ->createQueryBuilder('c')
+            ->select('c.id', 'c.name', 'c.price', 'c.img')
+            ->where("c.id = $id")
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Good[] Returns an array of Good objects
     //  */
