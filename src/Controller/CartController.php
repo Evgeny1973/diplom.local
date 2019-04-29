@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CartController extends AbstractController
 {
+    private $session;
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
 
     /**
      * @Route("/cart/", name="cart")
@@ -23,19 +28,12 @@ class CartController extends AbstractController
 
     /**
      * @Route("/cart/add/{id}", name="cart_add")
-     * @param int $id
      * @param SessionInterface $session
      * @return Response
      */
-    public function add(Good $good, SessionInterface $session): Response
+    public function add(Good $good): Response
     {
-        /* $good = $this->getDoctrine()->getRepository(Good::class)
-             ->getGoodForCart($id);
-         if (!$good) {
-             return $this->redirectToRoute('index');
-         }
-
-         if ($session->has('cart.totalQuantity')) {
+/*         if ($session->has('cart.totalQuantity')) {
              $totalQuantity = $session->get('cart.totalQuantity') + 1;
              $session->set('cart.totalQuantity', $totalQuantity);
          } else {
@@ -48,13 +46,15 @@ class CartController extends AbstractController
          } else {
              $session->set('cart.totalSum', $good[0]['price']);
          }*/
+
         //dump($session);
         //$session->clear();
         //die;
-        $cart = new Cart;
-        $cart->addToCart($good, $session);
 
-        return $this->render('cart/cart.html.twig', ['session' => $session]);
+        $cart = new Cart;
+        $cart->addToCart($good, $this->session);
+
+        return $this->render('cart/cart.html.twig', ['session' => $this->session]);
     }
 
     /**

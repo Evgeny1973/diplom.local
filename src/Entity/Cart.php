@@ -25,5 +25,11 @@ class Cart
             ];
         }
         $session->set('cart', $cart);
+
+        $cartTotalQuantity = $session->get('cartTotalQuantity') ? $session->get('cartTotalQuantity') + 1 : 1;
+        $session->set('cart.totalQuantity', $cartTotalQuantity);
+
+        $cartTotalSum = $session->get('cartTotalSum') ? $session->get('cartTotalSum') + $good->getPrice() : $good->getPrice();
+        $session->set('cart.totalSum', $cartTotalSum);
     }
 }

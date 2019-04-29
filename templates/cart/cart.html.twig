@@ -3,7 +3,7 @@
 {% block body %}
     <!-- Cart Info -->
 
-    {{ dump(app.session.get('cart')) }}
+    {{ dump(app.session) }}
 
     {% if app.session.get('cart') %}
 
