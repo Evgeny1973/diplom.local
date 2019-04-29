@@ -16,20 +16,30 @@ class Cart
         } else {
             $cart[$good->getId()] = [
 
-                    'id'         => $good->getId(),
-                    'name'         => $good->getName(),
-                    'img'          => $good->getImg(),
-                    'price'        => $good->getPrice(),
-                    'goodQuantity' => 1,
+                'id'           => $good->getId(),
+                'name'         => $good->getName(),
+                'img'          => $good->getImg(),
+                'price'        => $good->getPrice(),
+                'goodQuantity' => 1,
 
             ];
         }
         $session->set('cart', $cart);
 
-        $cartTotalQuantity = $session->get('cartTotalQuantity') ? $session->get('cartTotalQuantity') + 1 : 1;
-        $session->set('cart.totalQuantity', $cartTotalQuantity);
+        if (empty($session->get('cart.totalQuantity'))) {
+            $cartTotalQuantity = 1;
+            $session->set('cart.totalQuantity', $cartTotalQuantity);
+        } else {
+            $cartTotalQuantity = $session->get('cart.totalQuantity') + 1;
+            $session->set('cart.totalQuantity', $cartTotalQuantity);
+        }
 
-        $cartTotalSum = $session->get('cartTotalSum') ? $session->get('cartTotalSum') + $good->getPrice() : $good->getPrice();
-        $session->set('cart.totalSum', $cartTotalSum);
+        if (empty($session->get('cart.totalSum'))) {
+            $cartTotalSum = $good->getPrice();
+            $session->set('cart.totalSum', $cartTotalSum);
+        } else {
+            $cartTotalSum = $session->get('cart.totalSum') + $good->getPrice();
+            $session->set('cart.totalSum', $cartTotalSum);
+        }
     }
 }

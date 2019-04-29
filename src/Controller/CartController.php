@@ -28,29 +28,11 @@ class CartController extends AbstractController
 
     /**
      * @Route("/cart/add/{id}", name="cart_add")
-     * @param SessionInterface $session
+     * @param Good $good
      * @return Response
      */
     public function add(Good $good): Response
     {
-/*         if ($session->has('cart.totalQuantity')) {
-             $totalQuantity = $session->get('cart.totalQuantity') + 1;
-             $session->set('cart.totalQuantity', $totalQuantity);
-         } else {
-             $session->set('cart.totalQuantity', 1);
-         }
-
-         if ($session->has('cart.totalSum')) {
-             $totalSum = $session->get('cart.totalSum') + $good[0]['price'];
-             $session->set('cart.totalSum', $totalSum);
-         } else {
-             $session->set('cart.totalSum', $good[0]['price']);
-         }*/
-
-        //dump($session);
-        //$session->clear();
-        //die;
-
         $cart = new Cart;
         $cart->addToCart($good, $this->session);
 
