@@ -1,12 +1,12 @@
 
-function clearCart(eve) {
+function clearCart(event) {
     if (confirm('Точно очистить корзину?')){
-        eve.preventDefault();
+        event.preventDefault();
         $.ajax({
             url: '/cart/clear',
             type: 'GET',
             success: function (res) {
-                $('#cart .modal-content').html(res);
+                $('#cart').html(res);
             },
             error: function () {
                 alert('error');

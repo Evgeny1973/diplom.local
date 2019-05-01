@@ -39,7 +39,10 @@ class CartController extends AbstractController
     {
         $cart = new Cart;
         $cart->addToCart($good, $this->session);
-        return $this->redirect($request->headers->get('referer'));
+        if (!empty($request->headers->get('referer'))){
+            return $this->redirect($request->headers->get('referer'));
+        }
+        return $this->render('cart/cart.html.twig');
     }
 
     /**

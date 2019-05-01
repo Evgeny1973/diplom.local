@@ -42,7 +42,13 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
                                             </g>
 										</svg>
-                                    <div>Корзина <span>(0)</span></div>
+                                    <div>Корзина
+                                        {% if app.session.get('cart.totalQuantity') %}
+                                            <span>( {{ app.session.get('cart.totalQuantity') }} )
+                                        {% else %}
+                                            ( 0 )</span>
+                                        {% endif %}
+                                    </div>
                                 </a>
                             </div>
                             <div class="search">
