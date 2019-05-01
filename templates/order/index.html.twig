@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Подтверждение заказа{% endblock %}
+
+{% block body %}
+    <!-- Checkout -->
+{#{{ dump(app.session) }}#}
+    {{ form_start(form) }}
+
+    <div class="checkout">
+        <div class="container">
+            <div class="row">
+
+                <!-- Billing Info -->
+                <div class="col-lg-6">
+                    <div class="billing checkout_section">
+                        <div class="section_title">Данные для доставки</div>
+                        <div class="section_subtitle">Заполните поля</div>
+                        <div class="checkout_form_container">
+                            <form action="#" id="checkout_form" class="checkout_form">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <!-- Name -->
+                                        {{ form_row(form.name) }}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <!-- Address -->
+                                    {{ form_row(form.address) }}
+                                </div>
+
+                                <div>
+                                    <!-- Phone no -->
+                                    {{ form_row(form.phone) }}
+                                </div>
+                                <div>
+                                    <!-- Email -->
+                                    {{ form_row(form.email) }}
+                                </div>
+                                <div class="checkout_extra">
+                                    <div>
+                                        <input type="checkbox" id="checkbox_terms" name="regular_checkbox" class="regular_checkbox" checked="checked">
+                                        <label for="checkbox_terms"><img src="{{ asset('images/check.png') }}" alt=""></label>
+                                        <span class="checkbox_title">Правила и условия</span>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="checkbox_account" name="regular_checkbox" class="regular_checkbox">
+                                        <label for="checkbox_account"><img src="{{ asset('images/check.png') }}" alt=""></label>
+                                        <span class="checkbox_title">Создать аккаунт</span>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="checkbox_newsletter" name="regular_checkbox" class="regular_checkbox">
+                                        <label for="checkbox_newsletter"><img src="{{ asset('images/check.png') }}" alt=""></label>
+                                        <span class="checkbox_title">Подписаться на новости</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Info -->
+
+                <div class="col-lg-6">
+                    <div class="order checkout_section">
+                        <div class="section_title">Ваш заказ</div>
+                        <div class="section_subtitle">Детали заказа</div>
+
+                        <!-- Order details -->
+                        <div class="order_list_container">
+                            <div class="order_list_bar d-flex flex-row align-items-center justify-content-start">
+                                <div class="order_list_title"><b>Всего единиц</b></div>
+                                <div class="order_list_value ml-auto"><b>На сумму</b></div>
+                            </div>
+
+
+                            <ul class="order_list">
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="order_list_title">{{ app.session.get('cart.totalQuantity') }}</div>
+                                    <div class="order_list_value ml-auto">{{ app.session.get('cart.totalSum') }}</div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <!-- Payment Options -->
+                        <div class="payment">
+                            <div class="payment_options">
+                                <label class="payment_option clearfix">Палка
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="payment_option clearfix">Наличка
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="payment_option clearfix">Кредитная карта
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="payment_option clearfix">Он-лайн банк
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Order Text -->
+                        <div class="order_text">Спасибо, что выбрали наш магазин.</div>
+                        {{ form_row(form.save) }}
+                       {# <div class="button order_button newsletter_button">
+                            <button type="submit">Заказать</button>
+                            <a href="{{ path('order') }}">Заказать</a>
+                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -26,7 +26,7 @@ class Categories
      */
     private $rus_name;
 
- /**
+    /**
      * @ORM\Column(type="string", length=500)
      */
     private $description;

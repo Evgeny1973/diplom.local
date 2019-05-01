@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\OrderRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\OrdersRepository")
  */
-class Order
+class Orders
 {
     /**
      * @ORM\Id()
@@ -22,22 +24,22 @@ class Order
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", length=250)
+     * @ORM\Column(type="string", length=255)
      */
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $sum;
 
@@ -45,6 +47,12 @@ class Order
      * @ORM\Column(type="datetime")
      */
     private $date;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Orders")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $orderGoods;
 
     public function getId(): ?int
     {
@@ -104,22 +112,26 @@ class Order
         return $this->sum;
     }
 
-    public function setSum(string $sum): self
+    public function setSum(?string $sum): self
     {
         $this->sum = $sum;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(): self
     {
-        $this->date = $date;
-
+        $this->date = new DateTime('now');
         return $this;
+    }
+
+    public function getOrderGoods()
+    {
+        return $this->orderGoods;
     }
 }

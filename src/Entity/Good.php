@@ -77,7 +77,7 @@ class Good
         return $this->description;
     }
 
-     public function getPrice(): ?float
+    public function getPrice(): ?float
     {
         return $this->price;
     }
@@ -87,7 +87,7 @@ class Good
         return $this->img;
     }
 
-     public function getImages()
+    public function getImages()
     {
         return $this->images;
     }
