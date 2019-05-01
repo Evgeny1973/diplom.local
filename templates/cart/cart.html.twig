@@ -30,7 +30,7 @@
                                     <div><img src="/images/{{ item.img }}" alt="{{ item.name }}"></div>
                                 </div>
                                 <div class="cart_item_name_container">
-                                    <div class="cart_item_name"><a href="#">{{ item.name }}</a></div>
+                                    <div class="cart_item_name"><a href="{{ path('product_id', {id: item.id}) }}">{{ item.name }}</a></div>
                                 </div>
                             </div>
                             <!-- Price -->
@@ -65,8 +65,7 @@
                                 <a href="{{ path('index') }}">Продолжить
                                     покупки</a></div>
                             <div class="cart_buttons_right ml-lg-auto">
-                                <div class="button clear_cart_button newsletter_button">
-                                    <a href="{{ path('cart_clear') }}">Очистить корзину</a>
+                                <div class="button clear_cart_button newsletter_button" onclick="clearCart(event)">Очистить корзину
                                 </div>
                             </div>
                         </div>
@@ -123,8 +122,8 @@
                                         <div class="cart_total_value ml-auto">{{ app.session.get('cart.totalSum') }} рублей.</div>
                                     </li>
                                     <li class="d-flex flex-row align-items-center justify-content-start">
-                                        <div class="cart_total_title">Доставка</div>
-                                        <div class="cart_total_value ml-auto">Бесплатно</div>
+                                        <div class="cart_total_title">Всего товаров</div>
+                                        <div id="t_quantity" class="cart_total_value ml-auto">{{ app.session.get('cart.totalQuantity') }}</div>
                                     </li>
                                     <li class="d-flex flex-row align-items-center justify-content-start">
                                         <div class="cart_total_title">Итого</div>
@@ -140,11 +139,12 @@
             </div>
         </div>
     {% else %}
-        <h2>Корзина пуста (</h2>
-        <div class="row row_cart_buttons">
-            <div class="col">
-                <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                    <div class="button continue_shopping_button newsletter_button"><a href="{{ path('index') }}">Начать покупки</a></div>
+        <div id="empty_cart"><h2>Корзина пуста (</h2>
+            <div class="row row_cart_buttons">
+                <div class="col">
+                    <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                        <div class="button continue_shopping_button newsletter_button"><a href="{{ path('index') }}">Начать покупки</a></div>
+                    </div>
                 </div>
             </div>
         </div>

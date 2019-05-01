@@ -43,11 +43,13 @@
                                             </g>
 										</svg>
                                     <div>Корзина
-                                        {% if app.session.get('cart.totalQuantity') %}
-                                            <span>( {{ app.session.get('cart.totalQuantity') }} )
+                                            {{ app.session.has('cart')|length }}
+                                       {# {% if app.session.has('cart.totalQuantity') %}
+                                            <span id="menu-quantity">( {{ app.session.get('cart.totalQuantity') }} )</span>
                                         {% else %}
-                                            ( 0 )</span>
-                                        {% endif %}
+                                            <span id="menu-quantity">( 0 )</span>
+                                        {% endif %}#}
+
                                     </div>
                                 </a>
                             </div>
