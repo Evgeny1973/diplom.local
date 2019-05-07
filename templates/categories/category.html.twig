@@ -61,7 +61,8 @@
                     <!-- Product -->
                     {% for good in goods %}
                         <div class="product">
-                            <div class="product_image"><img src="/images/{{ good.img }}" alt="{{ good.name }}"></div>
+                            <a href="{{ path('product_id', {id: good.id}) }}">
+                                <div class="product_image"><img src="/images/{{ good.img }}" alt="{{ good.name }}"></div></a>
                             {% if good.status %}
                             <div class="product_extra product_new">{{ good.status }}</div>
                             {% endif %}

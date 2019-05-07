@@ -15,18 +15,20 @@ function clearCart(event) {
     }
 }
 
-$('.add_to_cart').on('click', function (event) {
-    event.preventDefault();
-    let id = $(this).data('id');
-    $.ajax({
-        url: '/cart/add/' + id,
-        type: 'GET',
-        success: function () {
-            $('html').html();
-        },
-        error: function () {
-            alert('Ошибка');
-        }
+$(document).ready(function()
+{
+    $('.add_to_cart').on('click', function (event) {
+        event.preventDefault();
+        let id = $(this).data('id');
+        $.ajax({
+            url: '/cart/add/' + id,
+            type: 'GET',
+            success: function (response) {
+                $('#menu-quantity').html(response);
+            },
+            error: function () {
+                alert('Беда!');
+            }
+        })
     })
-})
-
+});

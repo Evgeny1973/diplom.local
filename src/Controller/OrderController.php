@@ -51,7 +51,7 @@ class OrderController extends AbstractController
 
             $currentId = $order->getId();
             $this->saveOrderInfo($session->get('cart'), $currentId);
-            $session->remove('cart.totalSum');
+            $session->clear();
             return $this->render('order/thanx.html.twig', ['currentid' => $currentId]);
         }
 

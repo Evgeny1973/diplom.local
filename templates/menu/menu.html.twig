@@ -1,5 +1,4 @@
 {# menu/menu.html.twig#}
-{%  extends 'base.html.twig' %}
 {% block menu %}
 <!-- Header -->
 
@@ -42,7 +41,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
                                             </g>
 										</svg>
-                                    <div>Корзина
+                                    <div id="menu-cart">Корзина
                                         {% if app.session.has('cart.totalQuantity') %}
                                             <span id="menu-quantity">( {{ app.session.get('cart.totalQuantity') }} )</span>
                                         {% else %}
@@ -131,7 +130,7 @@
 
                     </ul>
                 </li>
-                <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="#">Contact<i class="fa fa-angle-down"></i></a></li>
             </ul>
         </div>
     </div>

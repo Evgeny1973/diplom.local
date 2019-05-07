@@ -32,17 +32,13 @@ class CartController extends AbstractController
     /**
      * @Route("/cart/add/{id}", name="cart_add")
      * @param Good $good
-     * @param Request $request
      * @return Response
      */
-    public function add(Good $good, Request $request): Response
+    public function add(Good $good): Response
     {
         $cart = new Cart;
         $cart->addToCart($good, $this->session);
-       if (!empty($request->headers->get('referer'))){
-            return $this->redirect($request->headers->get('referer'));
-        }
-        return $this->render('cart/cart.html.twig');
+        return new Response($this->session->get('cart.totalQuantity'));
     }
 
     /**

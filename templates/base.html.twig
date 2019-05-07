@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sublime project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <title>{% block title %}{% endblock %}</title>
-    {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('/styles/bootstrap4/bootstrap.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('styles/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('styles/media.css') }}">
-    {% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('/styles/bootstrap4/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/media.css') }}">
 </head>
+
 <html>
 <body>
 
-<div class="super_container">
+<div class="super_container" style="padding-top: 150px">
     {% block menu %}
         {{ render(controller('App\\Controller\\MenuController::categories')) }}
     {% endblock %}
@@ -28,34 +28,7 @@
     {% block body %}
     {% endblock %}
 
-    <div class="footer_overlay"></div>
-    <footer class="footer">
-        <div class="footer_background" style="background-image:url({{ asset('images/footer.jpg') }})"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-                        <div class="footer_logo"><a href="{{ path('index') }}">Sublime.</a></div>
-                        <div class="copyright ml-auto mr-auto">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This template is made with
-                            <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-                        <div class="footer_social ml-lg-auto">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include 'footer.html.twig' %}
 </div>
 
 {% block javascripts %}

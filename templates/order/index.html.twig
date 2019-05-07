@@ -4,7 +4,7 @@
 
 {% block body %}
     <!-- Checkout -->
-{#{{ dump(app.session) }}#}
+    {#{{ dump(app.session) }}#}
     {{ form_start(form) }}
 
     <div class="checkout">
@@ -88,11 +88,11 @@
                         <!-- Payment Options -->
                         <div class="payment">
                             <div class="payment_options">
-                                <label class="payment_option clearfix">Палка
+                                <label class="payment_option clearfix">PayPal
                                     <input type="radio" name="radio">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="payment_option clearfix">Наличка
+                                <label class="payment_option clearfix">Наличные
                                     <input type="radio" name="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -110,10 +110,6 @@
                         <!-- Order Text -->
                         <div class="order_text">Спасибо, что выбрали наш магазин.</div>
                         {{ form_row(form.save) }}
-                       {# <div class="button order_button newsletter_button">
-                            <button type="submit">Заказать</button>
-                            <a href="{{ path('order') }}">Заказать</a>
-                        </div>#}
                     </div>
                 </div>
             </div>
