@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f89cf39c-68be-409e-ab05-bf3e68e123e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/category.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +13,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -70,7 +62,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="e#586#658#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,7 +100,6 @@
         <option value="$PROJECT_DIR$/templates/order/thanx.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Orders.php" />
         <option value="$PROJECT_DIR$/src/Controller/IndexController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
         <option value="$PROJECT_DIR$/templates/javascripts.html.twig" />
         <option value="$PROJECT_DIR$/templates/stylesheets.html.twig" />
         <option value="$PROJECT_DIR$/templates/menu/menu.html.twig" />
@@ -111,6 +115,8 @@
         <option value="$PROJECT_DIR$/public/styles/style.css" />
         <option value="$PROJECT_DIR$/templates/categories/category.html.twig" />
         <option value="$PROJECT_DIR$/templates/index/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
       </list>
     </option>
   </component>
@@ -231,13 +237,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="diplom.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="diplom.local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom.local" type="b2602c69:ProjectViewProjectNode" />
@@ -317,6 +333,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +341,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mvc.local" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php2.local" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -365,6 +382,9 @@
       <workItem from="1556797928612" duration="7942000" />
       <workItem from="1556873657738" duration="19000" />
       <workItem from="1556873677420" duration="11000" />
+      <workItem from="1557237639442" duration="166000" />
+      <workItem from="1557309412300" duration="15000" />
+      <workItem from="1557437419141" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Почти всё готово. Остался ajax">
       <created>1556705883516</created>
@@ -408,16 +428,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556745118537</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Всё готово">
+      <created>1557237669557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557237669557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71845000" />
+    <option name="totallyTimeSpent" value="72754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="12" width="1385" height="837" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1954717" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15698113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -450,7 +478,8 @@
     <MESSAGE value="Всё готово до ajax." />
     <MESSAGE value="ajax." />
     <MESSAGE value="Эксперименты с ajax." />
-    <option name="LAST_COMMIT_MESSAGE" value="Эксперименты с ajax." />
+    <MESSAGE value="Всё готово" />
+    <option name="LAST_COMMIT_MESSAGE" value="Всё готово" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env.test">
@@ -515,7 +544,7 @@
     <entry file="das://de1dfe48-9bf8-4308-8fe0-5eec9134f319/schema/diplom/table/order_good">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true">
+          <filtering>
             <filter text="" />
           </filtering>
         </state>
@@ -524,7 +553,7 @@
     <entry file="das://de1dfe48-9bf8-4308-8fe0-5eec9134f319/schema/diplom/table/orders">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <filtering enabled="true">
+          <filtering>
             <filter text="" />
           </filtering>
         </state>
@@ -688,10 +717,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="220">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="e#586#658#0#PHP" />
           </folding>
